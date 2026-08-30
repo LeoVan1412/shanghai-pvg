@@ -1,0 +1,5 @@
+6ed9ceaafe3763f82d292d451931a456d628b03b88d761b1dba95e076aa2dc11  Shanghai-PVG-v2.1.0.zip
+9becb5ed3498afe6dd0d304753dca8cce9bfeea8adc6cfd4113d3a90c44b18a1  manifest.json
+f2150a2459300455282edaad23f658ca626381f7bade2a40ada3e74ac50b7908  Shanghai-Landmarks-v2.1.0.zip
+ece1a31059e326aafce3dcb6129a0e85e6c3e5816dd5f36ff240f41ccc3c041e  cover-v2.1.0-selected.png
+85750a6c7b15e342fa9ea28dfb71807b940685196d7f0d6f5d12ae9592fa4b87  cover-v2.1.0-accurate.png

@@ -1,6 +1,6 @@
 # 上海 (Shànghǎi)
 
-**PVG · v2.0.0**
+**PVG · v2.1.0**  
 **by LeoVan**
 
 上海全域高细节地图，覆盖全部 16 个区，并提供江苏、浙江及长江口方向的长三角地理背景。上海市外区域只作为道路、建筑、水系、土地利用、行政边界和地名背景，不生成本地图的常住人口或就业需求。
@@ -17,9 +17,10 @@ A high-detail map of all 16 districts of Shanghai, with geographic context exten
 ## Population and Demand / 人口与需求
 
 - **Official resident population (2024) / 2024 年官方常住人口:** 24,802,600
+- **Official-census-derived employed residents (2024 estimate) / 官方人口普查推导的 2024 就业居民估计:** 13,001,675
 - **Official legal-entity employment control / 法人单位从业人员控制量:** 13,099,632
 - **Modeled people on a typical weekday / 典型工作日建模人数:** 15,243,400
-- **Demand points / 需求点:** 10,249
+- **Demand points / 需求点:** 15,305
 - **Population groups / 出行人口组:** 76,217
 - **Group size / 每组人数:** 200 (uniform / 固定)
 - **Phantom demand points / 空需求点:** 0
@@ -52,16 +53,17 @@ Trip chains add the secondary legs that real Shanghai shows between the rush-hou
 
 ## Map Statistics / 地图统计
 
-- **Buildings indexed / 建筑索引:** 2,517,010
-- **Buildings inside Shanghai / 上海市内建筑:** 1,429,620
-- **Regional-context buildings / 市外背景建筑:** 1,087,386
+- **Buildings indexed / 建筑索引:** 2,511,903
+- **Buildings inside Shanghai / 上海市内建筑:** 1,425,460
+- **Regional-context buildings / 市外背景建筑:** 1,086,439
 - **Named facilities / 具名设施:** 23,296
-- **Road features / 道路要素:** 338,721
-- **Runway and taxiway features / 跑道与滑行道要素:** 1,675
-- **Precomputed O/D routes / 预计算 O/D 道路路径:** 75,156 unique pairs / 个唯一组合
+- **Road features / 道路要素:** 338,635
+- **Runway and taxiway features / 跑道与滑行道要素:** 1,538
+- **Precomputed O/D routes / 预计算 O/D 道路路径:** 74,124 unique pairs / 个唯一组合
 - **Route coverage / 路径覆盖率:** 100%
-- **Median routed distance / 道路距离中位数:** 19.67 km
-- **Mean routed distance / 道路距离平均值:** 23.99 km
+- **Median routed distance / 道路距离中位数:** 10.061 km
+- **Mean routed distance / 道路距离平均值:** 14.445 km
+- **Mean workplace commute / 就业通勤平均道路距离:** 10.404 km (official survey / 官方调查: 10.2 km)
 - **Maximum road snap distance / 最大道路吸附距离:** 0.984 km
 
 ### Facility Catalogue / 设施目录
@@ -171,12 +173,12 @@ When enabled, the companion also applies the map's calibrated Shanghai commute-t
 
 ## Methodology / 方法
 
-1. **Official controls / 官方控制量** — 2024 district resident population, detailed subdistrict population sources, and Fifth National Economic Census employment tables were normalized into exact Shanghai controls. / 使用 2024 年各区常住人口、街镇人口资料和第五次全国经济普查从业人员表，建立精确控制量。
+1. **Official controls / 官方控制量** — 2024 district resident population, 2020 Population Census employed-resident long tables, detailed subdistrict population/employment sources, and Fifth National Economic Census workplace tables were normalized into exact Shanghai controls. / 使用 2024 年各区常住人口、2020 年人口普查就业居民长表、街镇人口/就业资料和第五次全国经济普查工作地从业人员表，建立精确控制量。
 2. **Spatial assignment / 空间分配** — official controls were matched to 225 street, town, township, development-zone, farm, and forestry-area geometries. / 将官方控制量匹配到 225 个街道、镇、乡、开发区、农场和林场空间单元。
-3. **300 m grid / 300 米网格** — population and employment were disaggregated using real buildings, land use, facilities, roads, and official spatial weights, then reconciled exactly to every control. / 使用真实建筑、土地利用、设施、道路和官方空间权重，将人口与就业分配到 300 米网格，并逐控制区精确闭合。
+3. **300 m grid / 300 米网格** — population and employment were disaggregated using 1,425,460 hybrid building footprints, land use, facilities, roads, and locally calibrated fine-type densities, then reconciled exactly to every control. / 使用 1,425,460 个混合来源建筑轮廓、土地利用、设施、道路和本地标定的细分类型密度，将人口与就业分配到 300 米网格，并逐控制区精确闭合。
 4. **Facility catalog / 设施目录** — 23,296 named locations were classified by their person-trip functions. Facilities are destinations, not independent people totals. / 按人员出行功能分类 23,296 个具名地点；设施只作为目的地，不自行创造人数。
-5. **Demand synthesis / 需求合成** — a deterministic typical-weekday model generated fixed 200-person groups for commuting, education, business, external gateways, tourism, healthcare, retail, dining, entertainment, sports, hotels, conventions, industry, logistics, and agriculture. / 使用确定性的典型工作日模型，以每组 200 人生成通勤、教育、商务、对外枢纽、旅游、医疗、零售、餐饮、娱乐、体育、酒店、会展、工业、物流和农业需求。
-6. **Road routing / 道路寻路** — all 75,156 unique O/D pairs were routed on the extracted regional OSM road graph and stored as simplified driving paths. / 所有 75,156 个唯一 O/D 组合均在区域 OSM 道路图上预计算，并保存为简化后的道路路径。
+5. **Demand synthesis / 需求合成** — workplace commuting uses a doubly constrained matrix whose 16 employed-resident origin margins and 160 district × sector workplace destination margins close with zero error; other purposes remain deterministic people-only groups. / 就业通勤采用双约束矩阵，16 个就业居民起点边际与 160 个“区 × 行业”工作地终点边际误差均为 0；其他目的仍使用确定性的人员出行组。
+6. **Road routing / 道路寻路** — all 74,124 unique O/D pairs were routed on the extracted regional OSM road graph and stored as simplified driving paths. Workplace commute averages 10.404 km against the official 10.2 km. / 所有 74,124 个唯一 O/D 组合均在区域 OSM 道路图上预计算，并保存为简化后的道路路径；就业通勤道路均值为 10.404 公里，对应官方 10.2 公里。
 7. **Basemap and buildings / 底图与建筑** — real OSM water, land use, roads, boundaries, and labels were combined with Overture building footprints. / 将真实 OSM 水体、土地利用、道路、边界和地名与 Overture 建筑轮廓结合。
 
 ## Sources / 数据来源
@@ -187,6 +189,8 @@ All source data used for this clean-room rebuild is freely available. Exact URLs
 
 - [Shanghai Statistical Yearbook 2025 — district area and 2024 population](https://tjj.sh.gov.cn/tjnj/2025tjnj/C0202.htm)
 - [Shanghai Fifth National Economic Census — city employment](https://tjj.sh.gov.cn/cmsres/b3/b36d6d16841e4ac0a64a2e6664c69833/85fdf28606c6847035976a586d8d028d.pdf)
+- [Shanghai Population Census Yearbook 2020 — employed-resident long tables](https://tjj.sh.gov.cn/tjnj/rktjnj2020e.htm)
+- [Shanghai Seventh Comprehensive Transport Survey — 10.2 km average commute](https://www.shanghai.gov.cn/nw18454/20260720/dc38ff6bd47c4208b796c4be190e3bda.html?siteId=1)
 - [Shanghai airport 2025 annual report](https://star.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-04-30/600009_20260430_BK10.pdf)
 - [Shanghai Statistical Yearbook 2025 — education](https://tjj.sh.gov.cn/tjnj/tjnj2025.htm)
 - [OpenStreetMap](https://www.openstreetmap.org/) — ODbL 1.0

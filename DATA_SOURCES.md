@@ -23,8 +23,15 @@ JSON registry is authoritative for build-time input approval.
 
 ## Official statistics
 
+- Shanghai Population Census Yearbook 2020 long-form tables 1-1 and 4-1 for
+  district population and employed-resident rates, plus complete official
+  subdistrict employment tables for Huangpu, Changning and Fengxian. These are
+  combined with official 2024 resident controls to estimate 13,001,675 employed
+  residents; the hybrid vintage and geography are explicitly documented.
 - Shanghai municipal and all 16 district Fifth National Economic Census
   communiques for employment totals and district/subdistrict allocation.
+- Shanghai Seventh Comprehensive Transport Survey (published 2026) for the
+  official 10.2 km average commute-distance calibration benchmark.
 - Shanghai official population, transport, education, health, tourism,
   industrial-park and agricultural-service publications for independent model
   calibration.
@@ -39,6 +46,15 @@ a second-pass validation reconciled the extracted totals.
 No old Shanghai gameplay total is accepted as an official observation. The
 daily-equivalent demand targets are calculated from documented observations and
 explicit rates stored in `data/demand_model.json` and `data/model_spec.json`.
+
+Resident and workplace controls use 1,425,460 retained inside-Shanghai hybrid
+building footprints as allocation candidates. Eight residential fine types are
+fitted against 225 official street/town controls with deterministic five-fold
+cross-validation; ten workplace sector densities are calibrated directly to
+official Shanghai industry totals. The synthetic workplace O/D table is doubly
+constrained to official-census-derived employed-resident origin margins and
+officially controlled workplace destination margins. The flow cells are not
+claimed as observed.
 
 The release ZIP includes this document plus `SOURCE-REGISTRY.json` and
 `OFFICIAL-POPULATION-SOURCES.json`, so its source and licence records remain

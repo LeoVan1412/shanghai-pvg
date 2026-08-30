@@ -1,6 +1,6 @@
 # 上海 (Shànghǎi) — PVG
 
-![Shanghai PVG cover](assets/cover-v2.0.0-selected.png)
+![Shanghai PVG cover](assets/cover-v2.1.0-selected.png)
 
 A high-detail bilingual Shanghai map for **Subway Builder** and **Railyard**, authored by **LeoVan**.
 
@@ -8,28 +8,37 @@ A high-detail bilingual Shanghai map for **Subway Builder** and **Railyard**, au
 
 ## Download / 下载
 
-- [Shanghai-PVG-v2.0.0.zip](https://github.com/LeoVan1412/shanghai-pvg/releases/latest/download/Shanghai-PVG-v2.0.0.zip)
+- [Shanghai-PVG-v2.1.0.zip](https://github.com/LeoVan1412/shanghai-pvg/releases/latest/download/Shanghai-PVG-v2.1.0.zip)
 - [manifest.json](https://github.com/LeoVan1412/shanghai-pvg/releases/latest/download/manifest.json)
 - [Latest release notes / 最新发布说明](https://github.com/LeoVan1412/shanghai-pvg/releases/latest)
 
-Map ZIP SHA-256: `0e44080313b45c7fd8cf51fee4ea049fb70ef9828aaf7b2bd587c6035628ae5f`
+Map ZIP SHA-256: `6ed9ceaafe3763f82d292d451931a456d628b03b88d761b1dba95e076aa2dc11`
 
 ## Highlights / 主要特性
 
 - Complete coverage of all 16 Shanghai districts, with geographic-only context in surrounding Jiangsu and Zhejiang.
 - Real roads, water, land use, administrative boundaries, place labels, buildings, foundations, and collision data.
-- 15,243,400 modeled people across 10,249 non-phantom demand points and 76,217 fixed 200-person groups.
-- 100% precomputed coverage for all 75,156 unique origin/destination pairs.
+- 13,001,675 official-census-derived employed residents, closed exactly across all 16 districts and 225 street/town areas.
+- 15,243,400 modeled people across 15,305 non-phantom demand points and 76,217 fixed 200-person groups.
+- 100% precomputed coverage for all 74,124 unique origin/destination pairs.
+- Doubly constrained workplace O/D with zero origin/destination margin error; mean routed commute 10.404 km against the official 10.2 km.
+- Hybrid building allocation with locally calibrated residential and workplace fine types; checked Registry score 0.6475875, provisionally **High**.
 - People-only demand: freight tonnage, container throughput, and agricultural output are never converted into passengers.
 - Source and license records are included in the map package; visible attribution is preserved below.
 
 - 覆盖上海全部 16 个区，江苏、浙江周边区域仅作为地理背景，不生成客流。
 - 包含真实道路、水体、土地利用、行政边界、地名、建筑、地基与碰撞数据。
-- 模拟 15,243,400 人、10,249 个非空需求点及 76,217 个固定 200 人出行组。
-- 全部 75,156 个唯一 O/D 组合均已预计算道路路径。
+- 新增从官方人口普查推导的 13,001,675 名就业居民，并在 16 区、225 个街镇空间单元精确闭合。
+- 模拟 15,243,400 人、15,305 个非空需求点及 76,217 个固定 200 人出行组。
+- 全部 74,124 个唯一 O/D 组合均已预计算道路路径。
+- 就业通勤采用双约束 O/D，起终点边际误差均为 0；道路平均距离 10.404 公里，对应官方 10.2 公里。
+- 混合来源建筑落点与本地标定的居民/岗位细分类型；Registry 检查计算为 0.6475875，预期 **High**。
 - 只模拟人员出行；货运吨位、集装箱吞吐量及农业产量不会直接转换为乘客。
 
-See [DESCRIPTION.md](DESCRIPTION.md) for the full bilingual description and [DATA_SOURCES.md](DATA_SOURCES.md) for source details.
+See [DESCRIPTION.md](DESCRIPTION.md) for the full bilingual description,
+[DATA_SOURCES.md](DATA_SOURCES.md) for source details, and
+[DATA_QUALITY_SUBMISSION.md](DATA_QUALITY_SUBMISSION.md) for the transparent
+Registry scoring evidence and limitations.
 
 ## Launch requirement / 启动要求
 
