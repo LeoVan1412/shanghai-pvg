@@ -1,0 +1,18 @@
+{
+  "id": "leovan-shanghai-operations",
+  "name": "Shanghai Operations / 上海多制式运营",
+  "description": "One-click route planning with automatic recommendations, a five-tier PVG catalog, and express/through-operation rules. / 一键线路规划、五档轨道车辆及快慢车与跨线运营规则。",
+  "version": "0.8.1-dev.2",
+  "author": {
+    "name": "LeoVan",
+    "url": "https://github.com/LeoVan1412"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "subway-builder": ">=1.7.0"
+  },
+  "icon": "Network",
+  "license": "MIT",
+  "repository": "https://github.com/LeoVan1412/shanghai-pvg",
+  "keywords": ["shanghai", "PVG", "operations", "express", "through-service", "multi-track"]
+}

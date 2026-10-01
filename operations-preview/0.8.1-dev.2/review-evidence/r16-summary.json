@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-01",
+  "status": "development-source-preview",
+  "modVersion": "0.8.1-dev.2",
+  "gameVersionTested": "1.7.2",
+  "sourceSHA256": "bba8166cc1af74238d27e5e8a510c9249b578752bd9fa762a73fe78fbef510b3",
+  "privateReportSHA256": "c8ac60af8c4b1d88cf9263df6d7a28cff75c56d05b280677b8208c4eb8f8989d",
+  "passedTargetedAcceptance": true,
+  "publishReady": false,
+  "advancedInterfacesEnabledByDefault": false,
+  "scope": "loaded PVG add-only construction, actual express fleet on native bypass, two-hour dispatch smoke and cleanup; not full passenger-cycle certification",
+  "test": {
+    "originalRoutes": 43,
+    "originalTrains": 228,
+    "simulatedSeconds": 7368,
+    "dispatchFrames": 921,
+    "actualNewTrains": 8,
+    "newServiceNativeArrivals": 384,
+    "positiveOnboardObservations": 116,
+    "nativeCompletedJourneyRecords": 24,
+    "holds": 5,
+    "verifiedOvertakes": 3,
+    "unverifiedHoldsNotCounted": 2,
+    "existingT1PostStartActualArrivals": [
+      33,
+      44
+    ],
+    "originalTrainTimeoutRemovals": 0,
+    "originalTrainsMissingFromResult": 0,
+    "finiteObservedBodyOverlaps": 0,
+    "nativeServiceUndoPassed": true,
+    "nativeConstructionUndoPassed": true,
+    "staticAndInventoryUndoAudit": {
+      "tracksUnchanged": true,
+      "groupsUnchanged": true,
+      "inventoryUnchanged": true,
+      "routeStructureUnchanged": true
+    },
+    "verifiedTailThenActualSlowDeparture": [
+      {
+        "pair": 1,
+        "slowArrivalSeconds": 589.5,
+        "fastTailClearObservedSeconds": 768.5,
+        "sameSlowActualDepartureSeconds": 768.5
+      },
+      {
+        "pair": 2,
+        "slowArrivalSeconds": 2595.5,
+        "fastTailClearObservedSeconds": 2776.5,
+        "sameSlowActualDepartureSeconds": 2776.5
+      },
+      {
+        "pair": 3,
+        "slowArrivalSeconds": 3605.5,
+        "fastTailClearObservedSeconds": 3784.5,
+        "sameSlowActualDepartureSeconds": 3784.5
+      }
+    ]
+  },
+  "safety": {
+    "exitSpace": "fast train length + 25 metres",
+    "nativeStopTimeoutSeconds": 900,
+    "claimClearing": false,
+    "existingTrainTeleport": false,
+    "extraPhysicsTicks": false,
+    "nextLegNeedsExactDirectedContinuity": true,
+    "releaseNeedsActualNonemptyBodyAndTailProof": true
+  },
+  "decisionTiming": {
+    "lastMs": 8.299999997019768,
+    "observedPeakMs": 17.599999994039536,
+    "renderedFPSClaim": false
+  },
+  "restoration": {
+    "coldPersistedNativeRecovery": true,
+    "nineLayersEqual": {
+      "tracks": true,
+      "trackGroups": true,
+      "routes": true,
+      "trains": true,
+      "stations": true,
+      "stNodes": true,
+      "signals": true,
+      "compressedDemandData": true,
+      "timeConfig": true
+    },
+    "originalRoutes": 43,
+    "originalTrains": 228,
+    "paused": true,
+    "originalInstalledModRestored": true
+  },
+  "offlineRegression": {
+    "passed": [
+      "test_operations_mod.js",
+      "test_service_planner.js",
+      "test_dispatch_core.js",
+      "test_dispatch_index.js",
+      "test_expansion_core.js",
+      "test_expansion_transaction.js",
+      "test_dispatch_safety.js"
+    ],
+    "scope": "Synthetic own-code fixtures; not loaded-game acceptance"
+  },
+  "earlierRounds": [
+    {
+      "round": "r13",
+      "passed": false,
+      "reason": "Both existing T1 timed out; no passing"
+    },
+    {
+      "round": "r14",
+      "passed": false,
+      "reason": "T1 improved; no passing"
+    },
+    {
+      "round": "r15",
+      "passed": false,
+      "reason": "Approach gate rejected actual opportunities; no passing"
+    }
+  ],
+  "limitations": [
+    "Not a full passenger-cycle/long-duration certificate",
+    "Not a separate matched live original-network control",
+    "Not exhaustive 4/6/8-track throat/interlocking coverage",
+    "Not unlimited-scale performance assurance",
+    "PVG only; SHA compatibility not claimed",
+    "Advanced interfaces have no finished ordinary-player activation flow",
+    "Latest prebuilt demand network/save is not included",
+    "Raw private logs/saves/native source/facility metadata are not published"
+  ]
+}
