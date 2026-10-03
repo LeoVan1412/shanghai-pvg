@@ -12,6 +12,8 @@ The latest operations source preview is included in this repository. The publish
 - [与现有上海地图及相关模组的具体区别 / Concrete community comparison](operations-preview/0.8.1-dev.2/COMMUNITY_COMPARISON_2026-10-01.md)
 - [脱敏专项测试证据 / Sanitized targeted QA](operations-preview/0.8.1-dev.2/review-evidence/r16-summary.json)
 - [发布前验收状态与 10 月 3 日离线复验 / Acceptance status and October 3 offline reverification](operations-preview/0.8.1-dev.2/review-evidence/ACCEPTANCE_STATUS_2026-10-03.md)
+- [可下载的开发审核 ZIP 与校验值 / Downloadable development review package](operations-preview/0.8.1-dev.2/review-package/)
+- [10 月 3 日重新提出的 Registry 审核与评分复核请求 / Renewed Registry review and rating reassessment request](https://github.com/Subway-Builder-Modded/registry/pull/9355#issuecomment-5964799572)
 - [社区预审请求 / Community review-guidance request](https://github.com/Subway-Builder-Modded/registry/pull/9355#issuecomment-5930567389)
 
 ### 新增运营能力 / Operations scope
