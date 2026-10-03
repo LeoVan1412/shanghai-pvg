@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-03",
+  "status": "offline-reverification-only",
+  "modVersion": "0.8.1-dev.2",
+  "sourceCommit": "e533a009357159fd85fa9568efa82f98f153dca7",
+  "nodeVersion": "v24.16.0",
+  "sourceSHA256": "bba8166cc1af74238d27e5e8a510c9249b578752bd9fa762a73fe78fbef510b3",
+  "checksumVerifiedFiles": 20,
+  "offlineRegression": [
+    {
+      "script": "test_operations_mod.js",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "script": "test_service_planner.js",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "script": "test_dispatch_core.js",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "script": "test_dispatch_index.js",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "script": "test_expansion_core.js",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "script": "test_expansion_transaction.js",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "script": "test_dispatch_safety.js",
+      "exitCode": 0,
+      "passed": true
+    }
+  ],
+  "syntheticPlanningPerformance": {
+    "stations": 5000,
+    "routes": 200,
+    "allPlansMs": 74.577042,
+    "cached1000Ms": 2.4024169999999856,
+    "renderedFPSClaim": false
+  },
+  "newLoadedGameAcceptance": false,
+  "publishReady": false,
+  "advancedPlayerActivationComplete": false,
+  "limitations": [
+    "Offline synthetic fixtures only; not a new loaded-game run",
+    "No new long-duration/full-passenger-cycle evidence",
+    "No exhaustive multi-layout throat/interlocking certification",
+    "Advanced ordinary-player activation workflow remains unfinished",
+    "No community approval or SHA compatibility implied",
+    "24 simulated hours is a proposed future test duration, not a maintainer-approved criterion"
+  ],
+  "notes": [
+    "The native test error is intentionally injected by the regression fixture.",
+    "The auditErrors=1 fixture output is not an observed live-game audit count.",
+    "Existing r16 evidence remains scoped to 7368 simulated seconds; it is not upgraded by this rerun."
+  ]
+}
